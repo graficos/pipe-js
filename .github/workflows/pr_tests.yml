@@ -1,0 +1,21 @@
+# https://github.com/Adzz/yarn_command_action
+# https://github.com/marketplace/actions/run-a-yarn-or-npm-command
+
+name: Unit Tests
+
+on: [pull_request]
+
+jobs:
+  unit_tests:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+
+      - name: Install dependencies
+        run: npm i
+
+      - name: Test
+        run: npm t
