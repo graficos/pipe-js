@@ -1,5 +1,7 @@
 # Pipe JS
 
+![Unit Tests](https://github.com/graficos/pipe-js/workflows/Unit%20Tests/badge.svg)
+
 ## Installation
 
 ```
