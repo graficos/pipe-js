@@ -12,7 +12,7 @@ npm i @graficos/pipe-js
 
 Pipes are a pattern of function composition. They enable you to do several transformations to a value in 1 step.
 
-You pass a number of functions and a parameter that will be consumed by these functions, so you can make some transformations to this value.
+You pass a number of functions and a parameter that will be consumed by these functions, so you can make some transformations to this value.
 
 ### How are they useful?
 
