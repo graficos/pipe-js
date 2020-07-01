@@ -15,7 +15,7 @@
   "files": [
     "dist"
   ],
-  "repository": "graficos-net/pipe-js",
+  "repository": "graficos/pipe-js",
   "publishConfig": {
     "access": "public"
   },
