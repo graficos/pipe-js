@@ -5,7 +5,8 @@
   "scripts": {
     "test": "jest",
     "build": "rollup -c",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "prepublish": "npm t && npm run build"
   },
   "author": "Paul Melero",
   "license": "MIT",
