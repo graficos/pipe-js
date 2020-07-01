@@ -6,10 +6,10 @@
  */
 export const pipe = (...functions) =>
   /**
-   * @param {unknown} value
+   * @param {unknown} arg single arg passed to the pipe
    */
-  (value) =>
+  (arg) =>
     functions.reduce(
       (currentValue, currentFunction) => currentFunction(currentValue),
-      value
+      arg
     )
