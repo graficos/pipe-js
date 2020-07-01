@@ -100,11 +100,33 @@ const result = await asyncPipe(someAsyncFunction, someOtherAsyncOperation)(1) //
 
 Just remember that just like `pipe` always returned a function, `asyncPipe` will always return a `Promise`. You, you need to uwrap the value that it'll return with `async`/`await` or using `.then()`.
 
+## Examples
+
+You can see some tests to see more examples in [/src](./src) (the `*.spec.js` files).
+
+Another example would be **"composable derived data"**. Sometimes they are called selectors or "computed properties":
+
+```js
+const addHello = (value) => `Hello, ${value}`
+const toUpperCase = (value) => String.prototype.toUpperCase.call(value)
+
+const person = {
+  name: 'Paul',
+  getGreet() {
+    return pipe(addHello, toUpperCase)(this.name)
+  },
+}
+
+console.log(person.getGreet()) // -> HELLO, PAUL
+person.name = 'Hello'
+console.log(person.getGreet()) // -> HELLO, HELLO
+```
+
+In this example, any time `name` changes, the derived state will be updated (as it is a function invoked everytime with the current `this.name`).
+
 ### About the library
 
 - It's done in JS and using [JSDoc](jsdoc.app/), so you'll have proper autocompletion in your editor.
-
-- You can see some tests to see more examples in [/src](./src) (the `*.spec.js` files).
 
 - You can use it both in the browser and in node, as it is exported as UMD, ESM and CJS.
 
